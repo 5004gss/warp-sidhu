@@ -1,9 +1,6 @@
-awk -F '[[:space:]]*\\|[[:space:]]*' '
-!/^#/ && $3 == "Mars" && $4 == "Completed" {
-  if ($6 > max) {
-    max = $6
-    code = $8
-  }
+awk -F '\\s*\\|\\s*' '
+$0 !~ /^#/ && $3 == "Mars" && $4 == "Completed" && $6+0 > max {
+  max = $6+0; code = $8
 }
 END { print code }
 ' space_missions.log
