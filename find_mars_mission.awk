@@ -4,3 +4,6 @@ $0 !~ /^#/ && $3 == "Mars" && $4 == "Completed" && $6+0 > max {
 }
 END { print code }
 ' space_missions.log
+
+
+hello jaspreet
